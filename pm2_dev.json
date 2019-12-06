@@ -2,11 +2,8 @@
   "name": "learn_git_koa",
   "script": "./bin/www",
   "cwd": "./",
-  "watch":[
-    "routes",
-    "app.js"
-  ],
+  "watch": true,
   "ignore_watch": [
-    "views"
+    "public"
   ]
 }

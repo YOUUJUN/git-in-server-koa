@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pm2 start ./bin/www --watch",
-    "prd": "pm2 start pm2.json",
+    "dev": "pm2 start pm2_dev.json",
+    "prd": "pm2 start pm2_prd.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -16,7 +16,6 @@
     "koa-cors": "0.0.16",
     "koa-json": "^2.0.2",
     "koa-logger": "^3.2.0",
-    "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.0",
@@ -24,6 +23,6 @@
     "pm2": "^4.2.0"
   },
   "devDependencies": {
-
+    "koa-onerror": "^4.1.0"
   }
 }

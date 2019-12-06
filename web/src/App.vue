@@ -8,6 +8,14 @@
   </div>
 </template>
 
+<script>
+
+  (function () {
+      document.cookie="username = youjun;"
+  })()
+
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

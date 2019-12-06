@@ -1,0 +1,6 @@
+{
+  "name": "learn_git_koa",
+  "script": "./bin/www",
+  "cwd": "./",
+  "watch": false
+}

@@ -6,16 +6,12 @@ const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser');
 const logger = require('koa-logger');
 const cors = require('koa-cors');
-const router = require('koa-router')();
+const router = require('./middlewares/router');
 const history = require('koa2-history-api-fallback');
 
 
-const index = require('./routes/index');
-const users = require('./routes/users');
-
-
 // error handler
-onerror(app);
+// onerror(app);
 
 // middlewares
 app.use(bodyparser({
@@ -33,7 +29,7 @@ app.use( async (ctx, next) =>{
 
 // app.use(cors({
 //   origin : function (ctx) {
-//     return "http://localhost:8000";
+//     return "http://localhost:8080";
 //   }
 //
 // }));
@@ -41,9 +37,8 @@ app.use( async (ctx, next) =>{
 
 
 
+router(app);
 
-app.use(index.routes(),index.allowedMethods());
-app.use(users.routes(),users.allowedMethods());
 
 // 前端(vue)路由
 // 所有 navigate 请求重定向到 '/index.html'，配合底下的 koaStatic，实际位置位于 vue-dist/index.html
@@ -72,7 +67,7 @@ app.use(async (ctx, next) => {
 
 // error-handling
 app.on('error', (err, ctx) => {
-  console.error('server error', err, ctx)
+  console.error('server error', err, ctx);
 });
 
 module.exports = app;

@@ -36,12 +36,12 @@
                 console.log("hello");
             }
         }
-    }
+    };
 
 </script>
 
 <style scoped>
-    @import "./assets/css/component.css";
+    @import "../assets/css/component.css";
 
     .main{
         width: 1170px;
